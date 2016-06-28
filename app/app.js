@@ -4,9 +4,13 @@
 	var contactsFormModule = angular.module('contactsFormModule', []);
 
 	// main module
-	angular.module('contacts', [
+	var app = angular.module('contacts', [
 		'contactsFormModule',
 		'ngCookies'
 	]);
+
+	app.controller('ContactsFormController', function() {
+		this.name = 'test';
+	});
 
 })(window.angular);
