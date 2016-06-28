@@ -9,8 +9,8 @@
 		'ngCookies'
 	]);
 
-	app.controller('ContactsFormController', function() {
-		this.name = 'test';
+	app.controller('ContactsFormController', function($scope) {
+		$scope.name = 'test';
 	});
 
 })(window.angular);

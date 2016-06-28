@@ -20,7 +20,7 @@ module.exports = function(grunt){
 			},
 			server: {
 				options: {
-					base :'./app/',
+					base :'./',
 					port: port,
 					keepalive: true
 				}
