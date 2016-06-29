@@ -1,6 +1,16 @@
 # Contacts app with Angular 1.5
 
-## Caution
+> npm install
+> bower install
+
+Launch a local server for debugging :
+> grunt 
+
+Build (mini css/js) & launch a local server :
+> grunt build
+
+
+## Caution with minifying
 
 > app.controller('Test', function($scope, service) {
 > });
@@ -11,3 +21,7 @@ else use this "best way" method for injection :
 > };
 > Test.$inject = ['$scope', 'service'];
 > app.controller('Test', Test);
+
+## Caution with order for load .js files
+
+Be carefull with the order of .js loaded files.
