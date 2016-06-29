@@ -20,21 +20,11 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="contact in contacts">
-			<th scope="row">
-				{{contact.id}}
-			</th>
-			<td>
-				{{contact.lastName}} {{contact.firstName}}
-			</td>
-			<td>
-				{{contact.cellPhone}}
-			</td>
-			<td>
-				{{contact.email}}
-			</td>
-			<td>
-				{{contact.id}}
-			</td>
+			<th scope="row" ng-bind="contact.id"></th>
+			<td ng-bind="contact.lastName + ' ' + contact.firstName"></td>
+			<td ng-bind="contact.cellPhone"></td>
+			<td ng-bind="contact.email"></td>
+			<td ng-bind="contact.id"></td>
 		</tr>
 	</tbody>
 </table>
