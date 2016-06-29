@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		
-		<div class="container-fluid" ng-app="contacts">
+		<div class="container-fluid" ng-app="app">
 
 			<div ng-controller="ContactsFormCtrl">
 				<input type="text" ng-model="name" placeholder="Name" />
@@ -27,6 +27,11 @@
 
 		<!-- build:js app/script.js -->
 		<script type="text/javascript" src="app/app.js"></script>
+		
+		<script type="text/javascript" src="app/contacts/contacts.module.js"></script>
+		<script type="text/javascript" src="app/contacts/contacts.controller.js"></script>
+		<script type="text/javascript" src="app/contacts/contacts.list.js"></script>
+		
 		<!-- endbuild -->
 
 	</body>
