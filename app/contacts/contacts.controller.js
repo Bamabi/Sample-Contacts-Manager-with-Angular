@@ -52,6 +52,11 @@
 
 			$scope.contact = {};
 		};
+
+		$scope.backContactsList = function()
+		{
+			console.log('back');
+		};
 	};
 
 	/*
