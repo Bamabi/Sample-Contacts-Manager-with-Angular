@@ -1,0 +1,40 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>
+				#
+			</th>
+			<th>
+				Informations
+			</th>
+			<th>
+				Cellphone
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="contact in contacts">
+			<th scope="row">
+				{{contact.id}}
+			</th>
+			<td>
+				{{contact.lastName}} {{contact.firstName}}
+			</td>
+			<td>
+				{{contact.cellPhone}}
+			</td>
+			<td>
+				{{contact.email}}
+			</td>
+			<td>
+				{{contact.id}}
+			</td>
+		</tr>
+	</tbody>
+</table>
