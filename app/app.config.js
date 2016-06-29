@@ -36,8 +36,8 @@
 		stateProvider.state('root.about', {
 			url: '/about',
 			views: {
-				'about': {
-					templateUrl:'app/common/about/about.html'
+				'main@': {
+					templateUrl: 'app/common/about/about.html'
 				}
 			}
 		});
