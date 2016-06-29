@@ -14,10 +14,7 @@
 		contactsService, 
 		dataStore
 	) {
-		$scope.lastName = "";
-		$scope.firstName = "";
-		$scope.email = "";
-		$scope.cellphone = "";
+		$scope.contact = {};
 
 		$scope.contactsState = false;
 
@@ -44,16 +41,14 @@
 
 		$scope.addContact = function()
 		{
-			var contact = {
-				lastName: $scope.lastName,
-				firstName: $scope.firstName,
-				email: $scope.email,
-				cellphone: $scope.cellphone,
-			};
+			var contact = $scope.contact;
+			contact.id = new Date().getTime();
 
 			$scope.contacts.push(contact);
 
 			dataStore.set('contacts', $scope.contacts);
+
+			$scope.contact = {};
 		};
 	};
 
