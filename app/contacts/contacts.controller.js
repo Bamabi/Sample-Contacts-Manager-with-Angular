@@ -10,10 +10,14 @@
 	 * Creation an instance your Contacts form Controller.
 	 */
 	var ContactsFormController = function($scope, contactsService) {
-		$scope.contacts = contactsService.getData()
-			.then(function(data) {
-				$scope.contacts = data.data;
-			});
+		$scope.contacts = [];
+		$scope.contactsState = false;
+
+		contactsService.getData()
+		.then(function(data) {
+			$scope.contacts = data.data;
+			$scope.contactsState = true;
+		});
 
 		$scope.removeContact = function(contact)
 		{
