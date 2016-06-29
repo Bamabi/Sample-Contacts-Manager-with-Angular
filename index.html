@@ -13,19 +13,18 @@
 		
 		<div class="container-fluid" ng-app="app">
 
-			<div ng-controller="ContactsFormCtrl">
+			<ui-view name="header"></ui-view>
 
-				<contacts-form></contacts-form>
+			<ui-view name="main"></ui-view>
 
-				<contacts-list></contacts-list>
-
-			</div>
+			<div ui-view="footer"></div>
 			
 		</div>
 
 		<!-- build:js app/vendor.js -->
 		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 		<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<!-- endbuild -->
 
 		<!-- build:js app/script.js -->
@@ -33,6 +32,7 @@
 		
 		<script type="text/javascript" src="app/common/services/datastore.provider.js"></script>
 
+		<script type="text/javascript" src="app/common/header/header.controller.js"></script>
 
 		<script type="text/javascript" src="app/contacts/contacts.module.js"></script>
 		<script type="text/javascript" src="app/contacts/contacts.service.js"></script>

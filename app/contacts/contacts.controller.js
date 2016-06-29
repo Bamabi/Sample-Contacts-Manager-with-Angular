@@ -13,7 +13,8 @@
 		$scope, 
 		contactsService, 
 		dataStore,
-		cookies
+		cookies,
+		$state
 	) {
 		cookies.put('myFavorite', 'oatmeal');
 
@@ -51,11 +52,13 @@
 			dataStore.set('contacts', $scope.contacts);
 
 			$scope.contact = {};
+
+			$state.go('root.contacts');
 		};
 
 		$scope.backContactsList = function()
 		{
-			console.log('back');
+			$state.go('root.contacts');
 		};
 	};
 
@@ -68,7 +71,8 @@
 		'$scope', 
 		'contactsService', 
 		'dataStore',
-		'$cookies'
+		'$cookies',
+		'$state'
 	];
 
 	/*
