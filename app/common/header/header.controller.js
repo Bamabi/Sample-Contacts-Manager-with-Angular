@@ -11,7 +11,7 @@
 	 */
 	var headerController = function($scope, $state)
 	{
-		$scope.today = new Date().toString();
+		$scope.today = new Date();
 
 		$scope.redirectToListContacts = function(){
 			$state.go('root.contacts');
