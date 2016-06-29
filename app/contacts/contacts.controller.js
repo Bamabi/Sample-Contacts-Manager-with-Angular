@@ -19,16 +19,16 @@
 				cellPhone: '0123456789'
 			},
 			{
-				id: new Date().getTime(),
+				id: new Date().getTime() + 1,
 				lastName: 'David',
-				firstName: 'Talabart',
+				firstName: 'Talabart 1',
 				email: 'd.t@yop.com',
 				cellPhone: '0123456789'
 			},
 			{
-				id: new Date().getTime(),
+				id: new Date().getTime() + 2,
 				lastName: 'David',
-				firstName: 'Talabart',
+				firstName: 'Talabart 2',
 				email: 'd.t@yop.com',
 				cellPhone: '0123456789'
 			}
@@ -36,7 +36,9 @@
 
 		$scope.removeContact = function(contact)
 		{
-			console.log('controller : ' + contact.id);
+			var contacts = $scope.contacts;
+			
+			contacts.splice(contacts.indexOf(contact), 1);
 		};
 	};
 
