@@ -9,28 +9,63 @@
 	/*
 	 * Creation an instance your Contacts form Controller.
 	 */
-	var ContactsFormController = function($scope, contactsService) {
-		$scope.contacts = [];
+	var ContactsFormController = function(
+		$scope, 
+		contactsService, 
+		dataStore
+	) {
+		$scope.lastName = "";
+		$scope.firstName = "";
+		$scope.email = "";
+		$scope.cellphone = "";
+
 		$scope.contactsState = false;
 
-		contactsService.getData()
-		.then(function(data) {
-			$scope.contacts = data.data;
+		$scope.contacts = dataStore.get('contacts');
+		if($scope.contacts == null || $scope.contacts.length == 0)
+		{
+			contactsService.getData()
+			.then(function(data) {
+				$scope.contacts = data.data;
+				$scope.contactsState = true;
+			});
+		}
+		else
+		{
 			$scope.contactsState = true;
-		});
+		}
 
 		$scope.removeContact = function(contact)
 		{
-			var contacts = $scope.contacts;
+			$scope.contacts.splice($scope.contacts.indexOf(contact), 1);
 
-			contacts.splice(contacts.indexOf(contact), 1);
+			dataStore.set('contacts', $scope.contacts);
+		};
+
+		$scope.addContact = function()
+		{
+			var contact = {
+				lastName: $scope.lastName,
+				firstName: $scope.firstName,
+				email: $scope.email,
+				cellphone: $scope.cellphone,
+			};
+
+			$scope.contacts.push(contact);
+
+			dataStore.set('contacts', $scope.contacts);
 		};
 	};
 
 	/*
 	 * Inject depencencies to your controller.
+	 * Caution : inject the service 'dataStore'
 	 */
-	ContactsFormController.$inject = ['$scope', 'contactsService'];
+	ContactsFormController.$inject = [
+		'$scope', 
+		'contactsService', 
+		'dataStore'
+	];
 
 	/*
      * Inject your new controller to module.
