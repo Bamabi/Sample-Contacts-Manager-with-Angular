@@ -23,6 +23,13 @@
 	</form>
 </div>
 
+<div class="row">
+	<div class="form-group col-xs-12">
+		<label for="filtering-contact">Search</label>
+		<input type="text" class="form-control" id="filtering-contact" ng-model="filterContact" placeholder="Search">
+	</div>
+</div>
+
 <table class="table table-striped" ng-show="contactsState == true">
 	<thead>
 		<tr>
@@ -44,7 +51,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="contact in contacts track by $index">
+		<tr ng-repeat="contact in contacts | filter:filterContact | orderBy:'firstName' track by $index">
 			<th scope="row">
 				<span class="glyphicon glyphicon-user"></span>
 				{{contact.id}}
