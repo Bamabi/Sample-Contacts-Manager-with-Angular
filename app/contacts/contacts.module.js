@@ -1,6 +1,16 @@
 (function (angular) {
 	'use strict';
 
-	var contactsModule = angular.module('contactsModule', []);
+	/*
+	 * specifics module dependencies
+	 */
+	var imports = [
+		'ngCookies',
+	];
+
+	/*
+	 * Create instance of your contacts module
+	 */
+	var contactsModule = angular.module('contactsModule', imports);
 
 })(window.angular);
