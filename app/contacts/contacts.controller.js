@@ -33,6 +33,11 @@
 				cellPhone: '0123456789'
 			}
 		];
+
+		$scope.removeContact = function(contact)
+		{
+			console.log('controller : ' + contact.id);
+		};
 	};
 
 	/*

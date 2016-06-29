@@ -20,11 +20,21 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="contact in contacts">
-			<th scope="row" ng-bind="contact.id"></th>
-			<td ng-bind="contact.lastName + ' ' + contact.firstName"></td>
-			<td ng-bind="contact.cellPhone"></td>
-			<td ng-bind="contact.email"></td>
-			<td ng-bind="contact.id"></td>
+			<th scope="row">
+				<span class="glyphicon glyphicon-user"></span>
+			</th>
+			<td>
+				{{contact.lastName}} {{contact.firstName}}
+			</td>
+			<td>
+				{{contact.cellPhone}}
+			</td>
+			<td>
+				{{contact.email}}
+			</td>
+			<td>
+				<span class="glyphicon glyphicon-remove" ng-click="removeContact(contact)"></span>
+			</td>
 		</tr>
 	</tbody>
 </table>
