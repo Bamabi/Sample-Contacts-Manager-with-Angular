@@ -2,14 +2,15 @@
 	'use strict';
 
 	/*
-	 * specifics module dependencies
+	 * Specifics module dependencies.
+	 * ngCookies : another module.
 	 */
 	var imports = [
 		'ngCookies',
 	];
 
 	/*
-	 * Create instance of your contacts module
+	 * Create of an instance of your contacts module
 	 */
 	var contactsModule = angular.module('contactsModule', imports);
 

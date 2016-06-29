@@ -7,13 +7,16 @@
 	var contactsModule = angular.module('contactsModule');
 	
 	/*
-	 * Creation an instance your Contacts form Controller.
+	 * Creation of an instance your Contacts form Controller.
 	 */
 	var ContactsFormController = function(
 		$scope, 
 		contactsService, 
-		dataStore
+		dataStore,
+		cookies
 	) {
+		cookies.put('myFavorite', 'oatmeal');
+
 		$scope.contact = {};
 
 		$scope.contactsState = false;
@@ -54,12 +57,14 @@
 
 	/*
 	 * Inject depencencies to your controller.
-	 * Caution : inject the service 'dataStore'
+	 * Caution : inject the service 'dataStore'.
+	 * Caution : inject the service '$cookies' for use the module 'ngCookies'.
 	 */
 	ContactsFormController.$inject = [
 		'$scope', 
 		'contactsService', 
-		'dataStore'
+		'dataStore',
+		'$cookies'
 	];
 
 	/*

@@ -7,7 +7,7 @@
 	var contactsModule = angular.module('contactsModule');
 
 	/*
-	 * Creation an instance your Contacts service.
+	 * Creation of an instance your Contacts service.
 	 */
 	var contactsService = function($http) {
 		// you can use $scope but you need to inject then or this.
