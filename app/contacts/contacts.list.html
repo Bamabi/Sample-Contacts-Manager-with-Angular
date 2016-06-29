@@ -1,5 +1,5 @@
 <div class="row">
-	<form class="col-xs-12" data-model="contact">
+	<form class="col-xs-12" ng-submit="addContact()">
 		<div class="form-group col-xs-12 col-md-6">
 			<label for="contact-name">Name</label>
 			<input type="text" class="form-control" id="contact-name" ng-model="contact.lastName" placeholder="Name">
@@ -16,7 +16,7 @@
 			<label for="contact-phone">Phone</label>
 			<input type="text" class="form-control" id="contact-phone" ng-model="contact.cellphone" placeholder="Phone">
 		</div>
-		<button type="button" class="btn btn-primary" ng-click="addContact()">
+		<button type="submit" class="btn btn-primary">
 			<span class="glyphicon glyphicon-plus glyphicon-align-left" aria-hidden="true"></span>
 			Add
 		</button>
@@ -44,9 +44,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="contact in contacts">
+		<tr ng-repeat="contact in contacts track by $index">
 			<th scope="row">
 				<span class="glyphicon glyphicon-user"></span>
+				{{contact.id}}
 			</th>
 			<td>
 				{{contact.lastName}} {{contact.firstName}}

@@ -44,10 +44,9 @@
 
 		$scope.addContact = function()
 		{
-			var contact = $scope.contact;
-			contact.id = new Date().getTime();
+			$scope.contact.id = new Date().getTime();
 
-			$scope.contacts.push(contact);
+			$scope.contacts.push($scope.contact);
 
 			dataStore.set('contacts', $scope.contacts);
 
