@@ -9,8 +9,11 @@
 		'ngCookies'
 	]);
 
-	app.controller('ContactsFormController', function($scope) {
-		$scope.name = 'test';
-	});
+	var ContactsFormController = function(a) {
+		a.name = 'test';
+	};
+	ContactsFormController.$inject = ['$scope'];
+
+	app.controller('ContactsFormCtrl', ContactsFormController);
 
 })(window.angular);
