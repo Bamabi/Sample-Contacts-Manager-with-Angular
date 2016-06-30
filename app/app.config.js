@@ -7,6 +7,7 @@
 	 */
 	var imports = [
 		'ui.router',
+		'pascalprecht.translate',
 		'contactsModule'
 	];
 
@@ -19,7 +20,11 @@
 	 * Share the dataStore for all the app.
 	 * Caution : inject the provider 'dataStoreProvider'
 	 */
-	var config = function(dataStoreProvider, urlRouterProvider, stateProvider)
+	var config = function(
+		dataStoreProvider, 
+		urlRouterProvider, 
+		stateProvider,
+		translateProvider)
 	{
 		stateProvider.state('root', {
 			views: {
@@ -46,9 +51,24 @@
 		urlRouterProvider.otherwise('/contacts');
 
 		dataStoreProvider.setType('sessionStorage');
+
+		// i18n
+		var ENtranslations = {
+			'app.title': 'AngularJS Translated'
+		};
+		
+		translateProvider.translations('en', ENtranslations)
+
+		// Default language
+		translateProvider.preferredLanguage('en');
 	};
 
-	config.$inject = ['dataStoreProvider', '$urlRouterProvider', '$stateProvider'];
+	config.$inject = [
+		'dataStoreProvider', 
+		'$urlRouterProvider', 
+		'$stateProvider',
+		'$translateProvider'
+	];
 
 	app.config(config);
 

@@ -9,7 +9,7 @@
 	/*
 	 * Creation of an instance your Header Controller.
 	 */
-	var headerController = function($scope, $state)
+	var headerController = function($scope, $state, $translate)
 	{
 		$scope.today = new Date();
 
@@ -20,7 +20,8 @@
 
 	headerController.$inject = [
 		'$scope',
-		'$state'
+		'$state',
+		'$translate'
 	];
 
 	appModule.controller('headerCtrl', headerController);
