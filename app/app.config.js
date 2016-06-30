@@ -53,11 +53,10 @@
 		dataStoreProvider.setType('sessionStorage');
 
 		// i18n
-		var ENtranslations = {
-			'app.title': 'AngularJS Translated'
-		};
-		
-		translateProvider.translations('en', ENtranslations)
+		translateProvider.useStaticFilesLoader({
+			prefix: 'app/common/i18n/',
+			suffix: '.json'
+		});
 
 		// Default language
 		translateProvider.preferredLanguage('en');

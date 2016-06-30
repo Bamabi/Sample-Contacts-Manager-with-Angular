@@ -9,13 +9,23 @@
 	/*
 	 * Creation of an instance your Header Controller.
 	 */
-	var headerController = function($scope, $state, $translate)
+	var headerController = function(
+		$scope, 
+		$state, 
+		$translate)
 	{
 		$scope.today = new Date();
 
 		$scope.redirectToListContacts = function(){
 			$state.go('root.contacts');
 		};
+
+		$scope.changeLang = function(key) {
+			$translate.use(key);
+			$scope.currentLang = key;
+		};
+
+		$scope.currentLang = $translate.use();
 	};
 
 	headerController.$inject = [
