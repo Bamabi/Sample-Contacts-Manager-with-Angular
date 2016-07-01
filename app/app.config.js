@@ -35,6 +35,9 @@
 				},
 				'footer': {
 					templateUrl: 'app/common/footer/footer.html'	
+				},
+				'component': {
+					template: '<form-component name="test"></form-component>'
 				}
 			}
 		});
