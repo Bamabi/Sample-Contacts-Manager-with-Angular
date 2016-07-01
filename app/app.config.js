@@ -7,6 +7,7 @@
 	 */
 	var imports = [
 		'ui.router',
+		'ngCookies',
 		'pascalprecht.translate',
 		'contactsModule'
 	];

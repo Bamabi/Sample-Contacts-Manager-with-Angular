@@ -12,7 +12,8 @@
 	var headerController = function(
 		$scope, 
 		$state, 
-		$translate)
+		$translate,
+		$cookies)
 	{
 		$scope.today = new Date();
 
@@ -23,15 +24,29 @@
 		$scope.changeLang = function(key) {
 			$translate.use(key);
 			$scope.currentLang = key;
+			$cookies.put('favLang', key);
 		};
 
-		$scope.currentLang = $translate.use();
+		// define default lang
+		var keyLang = $cookies.get('favLang');
+		if(keyLang)
+		{
+			$scope.currentLang = keyLang;
+			$translate.use(keyLang);
+		}
+		else
+		{
+			$scope.currentLang = $translate.use(); // return 'en', default value setted in app.config.js.
+		}
+
+		$cookies.put('favLang', $scope.currentLang);
 	};
 
 	headerController.$inject = [
 		'$scope',
 		'$state',
-		'$translate'
+		'$translate',
+		'$cookies'
 	];
 
 	appModule.controller('headerCtrl', headerController);

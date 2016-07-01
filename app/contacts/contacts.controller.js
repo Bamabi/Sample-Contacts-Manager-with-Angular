@@ -13,11 +13,8 @@
 		$scope, 
 		contactsService, 
 		dataStore,
-		cookies,
 		$state
 	) {
-		cookies.put('myFavorite', 'oatmeal');
-
 		$scope.contact = {};
 
 		$scope.contactsState = false;
@@ -71,7 +68,6 @@
 		'$scope', 
 		'contactsService', 
 		'dataStore',
-		'$cookies',
 		'$state'
 	];
 

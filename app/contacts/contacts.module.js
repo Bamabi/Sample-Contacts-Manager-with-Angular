@@ -6,7 +6,6 @@
 	 * ngCookies : another module.
 	 */
 	var imports = [
-		'ngCookies',
 	];
 
 	/*
