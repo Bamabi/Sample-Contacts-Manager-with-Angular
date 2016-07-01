@@ -1,28 +1,28 @@
 <div class="row">
 	<form class="col-xs-12" ng-submit="addContact()">
 		<div class="form-group col-xs-12 col-md-6">
-			<label for="contact-name">Name</label>
-			<input type="text" class="form-control" id="contact-name" ng-model="contact.lastName" placeholder="Name">
+			<label for="contact-name">{{'contacts.form.LastName' | translate}}</label>
+			<input type="text" class="form-control" id="contact-name" ng-model="contact.lastName" placeholder="{{'contacts.form.LastName' | translate}}">
 		</div>
 		<div class="form-group col-xs-12 col-md-6">
-			<label for="contact-firstname">Firstname</label>
-			<input type="text" class="form-control" id="contact-firstname" ng-model="contact.firstName" placeholder="Firstname">
+			<label for="contact-firstname">{{'contacts.form.FirstName' | translate}}</label>
+			<input type="text" class="form-control" id="contact-firstname" ng-model="contact.firstName" placeholder="{{'contacts.form.FirstName' | translate}}">
 		</div>
 		<div class="form-group col-xs-12 col-md-6">
-			<label for="contact-email">Email</label>
-			<input type="text" class="form-control" id="contact-email" ng-model="contact.email" placeholder="Email">
+			<label for="contact-email">{{'contacts.form.Email' | translate}}</label>
+			<input type="text" class="form-control" id="contact-email" ng-model="contact.email" placeholder="{{'contacts.form.Email' | translate}}">
 		</div>
 		<div class="form-group col-xs-12 col-md-6">
-			<label for="contact-phone">Phone</label>
-			<input type="text" class="form-control" id="contact-phone" ng-model="contact.cellphone" placeholder="Phone">
+			<label for="contact-phone">{{'contacts.form.Cellphone' | translate}}</label>
+			<input type="text" class="form-control" id="contact-phone" ng-model="contact.cellphone" placeholder="{{'contacts.form.Cellphone' | translate}}">
 		</div>
 		<button type="submit" class="btn btn-primary">
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-			Add
+			{{'contacts.form.Add' | translate}}
 		</button>
 		<button type="button" class="btn btn-warning" ng-click="backContactsList()">
 			<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-			Back
+			{{'contacts.form.Back' | translate}}
 		</button>
 	</form>
 </div>
